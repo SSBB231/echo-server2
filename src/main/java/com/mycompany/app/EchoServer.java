@@ -17,7 +17,6 @@
  *
  ******************************************************************************/
 package com.mycompany.app;
-
 import java.net.Socket;
 import java.net.ServerSocket;
 
@@ -43,16 +42,14 @@ public class EchoServer {
 
             // waits for data and reads it in until connection dies
             // readLine() blocks until the server receives a new line from client
-            String[] s;
-            s = in.readAllStrings();
-            System.out.println("\n");
-            for (String line:
-                 s) {
-                out.print(line);
-                System.out.print(line);
-            }
-            System.out.println("\n");
+            int countEmptyLine = 0;
+            String line;
 
+            while(in.hasNextLine()){
+                line = in.readLine();
+                System.out.println(line);
+                out.println(line);
+            }
 
             // close IO streams, then socket
             System.err.println("Closing connection with client");
