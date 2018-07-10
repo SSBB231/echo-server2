@@ -17,6 +17,7 @@
  *
  ******************************************************************************/
 package com.mycompany.app;
+
 import java.net.Socket;
 import java.net.ServerSocket;
 

@@ -25,7 +25,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>EchoServer</mainClass>
+              <mainClass>com.mycompany.app.EchoServer</mainClass>
             </manifest>
           </archive>
         </configuration>
