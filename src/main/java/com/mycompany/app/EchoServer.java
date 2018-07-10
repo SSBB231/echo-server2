@@ -47,7 +47,7 @@ public class EchoServer {
             while (in.hasNextLine()) {
                 s = in.readLine();
                 out.println(s);
-                System.err.println(s);
+                System.out.println(s);
             }
 
             // close IO streams, then socket
