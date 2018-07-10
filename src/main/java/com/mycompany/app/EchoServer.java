@@ -43,12 +43,16 @@ public class EchoServer {
 
             // waits for data and reads it in until connection dies
             // readLine() blocks until the server receives a new line from client
-            String s;
-            while (in.hasNextLine()) {
-                s = in.readLine();
-                out.println(s);
-                System.out.println(s);
+            String[] s;
+            s = in.readAllStrings();
+            System.out.println("\n");
+            for (String line:
+                 s) {
+                out.print(line);
+                System.out.print(line);
             }
+            System.out.println("\n");
+
 
             // close IO streams, then socket
             System.err.println("Closing connection with client");
