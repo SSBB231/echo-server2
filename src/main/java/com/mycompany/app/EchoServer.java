@@ -16,7 +16,7 @@
  *  at a time.
  *
  ******************************************************************************/
-
+package com.mycompany.app;
 import java.net.Socket;
 import java.net.ServerSocket;
 
@@ -25,7 +25,7 @@ public class EchoServer {
     public static void main(String[] args) throws Exception {
 
         // create socket
-        int port = 8080;
+        int port = Integer.parseInt(System.getenv("PORT"));
         ServerSocket serverSocket = new ServerSocket(port);
         System.err.println("Started server on port " + port);
 
@@ -43,8 +43,10 @@ public class EchoServer {
             // waits for data and reads it in until connection dies
             // readLine() blocks until the server receives a new line from client
             String s;
-            while ((s = in.readLine()) != null) {
+            while (in.hasNextLine()) {
+                s = in.readLine();
                 out.println(s);
+                System.err.println(s);
             }
 
             // close IO streams, then socket

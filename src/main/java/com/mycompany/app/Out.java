@@ -5,6 +5,7 @@
  *  Writes data of various types to: stdout, file, or socket.
  *
  ******************************************************************************/
+package com.mycompany.app;
 
 
 import java.io.IOException;
