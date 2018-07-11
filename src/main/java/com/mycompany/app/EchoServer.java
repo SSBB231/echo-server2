@@ -34,7 +34,7 @@ public class EchoServer {
 
             // a "blocking" call which waits until a connection is requested
             Socket clientSocket = serverSocket.accept();
-            System.err.println("Accepted connection from client");
+            System.err.println("Accepted connection from client\nUsing port: " + clientSocket.getPort());
 
             // open up IO streams
             In  in  = new In (clientSocket);
@@ -42,7 +42,6 @@ public class EchoServer {
 
             // waits for data and reads it in until connection dies
             // readLine() blocks until the server receives a new line from client
-            int countEmptyLine = 0;
             String line;
 
             while(in.hasNextLine()){
