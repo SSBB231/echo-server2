@@ -58,7 +58,13 @@ public class EchoServer {
             out.close();
             in.close();
             clientSocket.close();
-            System.out.println("================= END OF REQUEST # " + liveSessionRequestCount + "======================\n");
+            System.out.println("================= END REQUEST # \" + liveSessionRequestCount + \"==================\n");
+
+            liveSessionRequestCount++;
+
+            if(liveSessionRequestCount == Integer.MAX_VALUE){
+                liveSessionRequestCount = 0;
+            }
         }
     }
 }
