@@ -24,6 +24,8 @@ public class EchoServer {
 
     public static void main(String[] args) throws Exception {
 
+        int liveSessionRequestCount = 1;
+
         // create socket
         int port = Integer.parseInt(System.getenv("PORT"));
         ServerSocket serverSocket = new ServerSocket(port);
@@ -44,8 +46,9 @@ public class EchoServer {
             // readLine() blocks until the server receives a new line from client
             String line;
 
-            while(in.hasNextLine()){
-                line = in.readLine();
+            System.out.println("\n================= REQUEST # " + liveSessionRequestCount + "======================");
+
+            while((line = in.readLine()) != null){
                 System.out.println(line);
                 out.println(line);
             }
@@ -55,6 +58,7 @@ public class EchoServer {
             out.close();
             in.close();
             clientSocket.close();
+            System.out.println("================= END OF REQUEST # " + liveSessionRequestCount + "======================\n");
         }
     }
 }

@@ -1,3 +1,3 @@
-In.class
-EchoServer.class
-Out.class
+com\mycompany\app\In.class
+com\mycompany\app\EchoServer.class
+com\mycompany\app\Out.class
